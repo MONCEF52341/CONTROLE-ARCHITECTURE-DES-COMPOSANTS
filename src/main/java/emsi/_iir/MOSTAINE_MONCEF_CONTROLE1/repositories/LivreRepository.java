@@ -8,5 +8,5 @@ import java.util.List;
 public interface LivreRepository extends JpaRepository<Livre, Long> {
     public Livre findLivreById(Long id);
     public List<Livre> findLivresByPrixBetween(Double min, Double max);
-    public List<Livre> findLivresByAuthor(Long authorid);
+    public List<Livre> findLivresByAuteurId(Long auteurId);
 }

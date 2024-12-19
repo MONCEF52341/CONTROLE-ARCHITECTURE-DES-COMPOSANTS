@@ -1,15 +1,15 @@
 type Query{
     listLivres : [Livre]
     getLivreById(id:Int):Livre
-    getLivrePriceBetween(a:Float,b:Float):[Livre]
-    getLivreByAutor(id:Int):[Livre]
+    getLivresPriceBetween(a:Float,b:Float):[Livre]
+    getLivresByAutor(id:Int):[Livre]
     getAutor : [Auteur]
 }
 
 type Mutation{
     addLivre(livre : LivreDTO):Livre
-    updateEtudiant(id:Float,etudiant : LivreDTO):Livre
-    deleteEtudiant(id:Float):Boolean
+    updateEtudiant(id:Int,livre : LivreDTO):Livre
+    deleteEtudiant(id:Int):Boolean
 }
 
 
@@ -27,7 +27,6 @@ type Livre{
 }
 
 input LivreDTO{
-    nom:String
     titre:String
     prix:Float
     auteurId:Float
