@@ -1,0 +1,34 @@
+type Query{
+    listLivres : [Livre]
+    getLivreById(id:Int):Livre
+    getLivrePriceBetween(a:Float,b:Float):[Livre]
+    getLivreByAutor(id:Int):[Livre]
+    getAutor : [Auteur]
+}
+
+type Mutation{
+    addLivre(livre : LivreDTO):Livre
+    updateEtudiant(id:Float,etudiant : LivreDTO):Livre
+    deleteEtudiant(id:Float):Boolean
+}
+
+
+type Auteur{
+    id:Int
+    nom:String
+    listLivres:[Livre]
+}
+
+type Livre{
+    id:Int
+    titre:String
+    prix:Float
+    auteur:Auteur
+}
+
+input LivreDTO{
+    nom:String
+    titre:String
+    prix:Float
+    auteurId:Float
+}
